@@ -22,7 +22,9 @@ export const FLAG_TAB = {
 export default class HomePage extends Component {
 
     constructor(props) {
+
         super(props);
+
         let selectedTab = this.props.selectedTab ? this.props.selectedTab : FLAG_TAB.flag_MainTab;
         this.state = {
             selectedTab: selectedTab,
@@ -40,16 +42,16 @@ export default class HomePage extends Component {
     _renderTab(Component, selectedTab, title, renderIcon) {
         return (
             <TabNavigator.Item
-                selected={this.state.selectedTab === {selectedTab}}
+                selected={this.state.selectedTab === selectedTab}
                 title={title}
-                selectedTitleStyle={{color: 'red'}}
+                selectedTitleStyle={styles.selectedTitleStyle}
                 renderIcon={() => <Image style={styles.tabItemImageStyle}
                                          source={renderIcon}/>}
                 renderSelectedIcon={() => <Image
-                    style={[styles.tabItemImageStyle]}
+                    style={[styles.tabItemImageStyle,styles.tabSelectedStyle]}
                     source={renderIcon}/>}
                 onPress={() => this.onSelected(selectedTab)}>
-                {Component}
+                <Component/>
             </TabNavigator.Item>
         )
     }
@@ -83,6 +85,12 @@ const styles = StyleSheet.create({
 
     tabItemImageStyle: {
         width: 24,
-        height: 24
+        height: 24,
+    },
+    tabSelectedStyle: {
+        tintColor:'blue'
+    },
+    selectedTitleStyle:{
+        color:'blue'
     }
 });

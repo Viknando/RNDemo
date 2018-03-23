@@ -5,7 +5,8 @@ import {
     View,
     Image,
 } from 'react-native';
-class TopicPage extends Component{
+
+export default class TopicPage extends Component{
     render(){
         return(
             <Text style={{marginTop:30}} >topic</Text>

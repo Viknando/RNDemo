@@ -5,10 +5,11 @@ import {
     View,
     Image,
 } from 'react-native';
-class MainPage extends Component{
+
+export default class MainPage extends Component{
     render(){
         return(
-            <Text style={{marginTop:30}} >Main</Text>
+            <Text style={{marginTop:30,fontSize:50}} >Main</Text>
         )
     }
 }
