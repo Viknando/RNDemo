@@ -10,6 +10,7 @@ import {
 import ScrollableTabView, {ScrollableTabBar} from 'react-native-scrollable-tab-view';
 import OnePage from './practice/01';
 import TwoPage from './practice/02';
+import ThreePage from './practice/03';
 
 var Dimensions = require('Dimensions');
 
@@ -32,6 +33,7 @@ export default class TopicPage extends Component {
             >
                 <OnePage tabLabel='1'/>
                 <TwoPage tabLabel='2'/>
+                <ThreePage tabLabel='3'/>
             </ScrollableTabView>
         )
     }
