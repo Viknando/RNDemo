@@ -64,8 +64,8 @@ export default class HomePage extends Component {
                     tabBarStyle={{opacity: 0.9,}}
                     sceneStyle={{paddingBottom: 0}}
                 >
-                    {this._renderTab(MainPage, FLAG_TAB.flag_MainTab, '主页', require('../res/imgs/ic_polular.png'))}
-                    {this._renderTab(NewsPage, FLAG_TAB.flag_NewsTab, '新闻', require('../res/imgs/ic_trending.png'))}
+                    {this._renderTab(MainPage, FLAG_TAB.flag_MainTab, '热点', require('../res/imgs/ic_trending.png'))}
+                    {this._renderTab(NewsPage, FLAG_TAB.flag_NewsTab, '新闻', require('../res/imgs/ic_news.png'))}
                     {this._renderTab(MinePage, FLAG_TAB.flag_MineTab, '我的', require('../res/imgs/ic_my.png'))}
 
 
