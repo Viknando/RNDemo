@@ -10,14 +10,8 @@ import {
 } from 'react-native';
 import MD5 from "react-native-md5";
 import WebPage from '../web/WebPage';
-// export const tabs=[
-//     {api: apilist.RECENT_TOP_API, apiName: 'RECENT_TOP_API', tabLable: '最新'},
-//     {api: apilist.POP_TOPIC_API, apiName: 'POP_TOPIC_API', tabLable: '最热'},
-//     {api: apilist.NO_REPLY_API, apiName: 'NO_REPLY_API', tabLable: '沙发'},
-//     {api: apilist.EXEC_TOPIC_API, apiName: 'EXEC_TOPIC_API', tabLable: '精华'}];
 
-
-export default class MainPage extends Component {
+export default class NewsListComponent extends Component {
 
     constructor(props) {
         super(props)
@@ -27,15 +21,18 @@ export default class MainPage extends Component {
             data: null,
 
         }
-        this.loadData();
+    }
+    componentDidMount(){
+        this.loadData(this.props.category)
     }
 
-    loadData() {
+
+    loadData(category) {
         let _that = this;
         let timestamp = Date.parse(new Date());
         var m = "c1*************************5b" + timestamp + "S*************HG";
         let signature = MD5.hex_md5(m);
-        fetch('http://api.xinwen.cn/news/hot?size=100&access_key=S*************HG&signature=' + signature + '&timestamp=' + timestamp, {
+        fetch('http://api.xinwen.cn/news/hot?size=50&access_key=S*************HG&signature=' + signature + '&timestamp=' + timestamp+"&category="+category, {
             method: 'GET'
         })
             .then((response) => response.json())
@@ -91,20 +88,20 @@ export default class MainPage extends Component {
 const styles=StyleSheet.create({
     card:{
         backgroundColor:'white',
-            padding:10,
-            marginTop:4,
-            marginLeft:6,
-            marginRight:6,
-            marginVertical:2,
-            borderWidth:0.3,
-            borderColor:'#dddddd',
-            borderRadius:1,
-            //iOS的阴影
-            shadowColor:'#b5b5b5',
-            shadowOffset:{width:3,height:2},
+        padding:10,
+        marginTop:4,
+        marginLeft:6,
+        marginRight:6,
+        marginVertical:2,
+        borderWidth:0.3,
+        borderColor:'#dddddd',
+        borderRadius:1,
+        //iOS的阴影
+        shadowColor:'#b5b5b5',
+        shadowOffset:{width:3,height:2},
         shadowOpacity:0.4,
-            shadowRadius:1,
-            //Android的阴影
-            elevation:2
+        shadowRadius:1,
+        //Android的阴影
+        elevation:2
     }
 })
