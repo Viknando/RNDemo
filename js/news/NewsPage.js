@@ -38,9 +38,9 @@ export default class TopicPage extends Component {
                     tabStyle={{paddingLeft: 12, paddingRight: 12}}
                 />}
             >
-                {categories.map((result,i,arr)=>{
-                    let item=arr[i];
-                    return <NewsList key={i} tabLabel={item.name}  category={item.alias} {...this.props}/>;
+                {categories.map((result, i, arr) => {
+                    let item = arr[i];
+                    return <NewsList key={i} tabLabel={item.name} category={item.alias} {...this.props}/>;
                 })}
 
             </ScrollableTabView>
