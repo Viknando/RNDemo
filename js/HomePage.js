@@ -8,9 +8,9 @@ import {
 
 import TabNavigator from 'react-native-tab-navigator';
 
-import MainPage from '../js/MainPage'
-import TopicPage from '../js/TopicPage'
-import MinePage from '../js/MinePage'
+import MainPage from './main/MainPage'
+import TopicPage from './TopicPage'
+import MinePage from './MinePage'
 
 //需要导出的常量
 export const FLAG_TAB = {
