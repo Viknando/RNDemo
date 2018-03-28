@@ -115,7 +115,7 @@ export default class MainPage extends Component {
                 alert(error)
                 _that.setState({
                     isLoading: false,
-                    dataSource:null,
+                    dataSource:new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}),
                 })
             });
     }
