@@ -6,7 +6,6 @@
 
 import React, { Component } from 'react';
 import {
-    AppRegistry,
     StyleSheet,
     Text,
     View,
@@ -15,19 +14,13 @@ import {
 
 class Search extends Component{
 
-    //一定要在这里定义变量 不然就null is not an object this.state.vall
+    //this.state.vall will be null if no define params in constructor
     constructor(props){
         super(props)
         this.state={
             show:false,
             vall:null,
         }
-    }
-
-    getInitialState(){
-        return({
-            show:false,
-            })
     }
 
     getValue(txt){
@@ -132,5 +125,3 @@ var styles = StyleSheet.create({
     }
 
 });
-
-AppRegistry.registerComponent('demo_new', () => App);
